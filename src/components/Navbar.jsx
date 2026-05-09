@@ -22,7 +22,6 @@ export default function Navbar() {
   const navLinks = [
     { title: t('nav.home'), href: '/' },
     { title: t('nav.products'), href: '/products' },
-    { title: t('nav.education'), href: '/education' },
     { title: t('nav.about'), href: '/#about' },
   ];
 

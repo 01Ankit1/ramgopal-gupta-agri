@@ -37,8 +37,12 @@ import { Link } from 'react-router-dom';
       excerpt: "Protect your wheat and mustard crops from frost and early pests with this expert guide.",
       excerptHi: "इस विशेषज्ञ गाइड के साथ अपनी गेहूं और सरसों की फसलों को पाले और शुरुआती कीटों से बचाएं।"
     }
-  ];
+];
 
+export default function Education() {
+  const { i18n } = useTranslation();
+  const isHindi = i18n.language === 'hi';
+  
   return (
     <div className="pt-24 pb-20 min-h-screen bg-slate-50">
       
