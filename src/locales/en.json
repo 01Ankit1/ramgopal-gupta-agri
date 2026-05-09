@@ -1,0 +1,83 @@
+{
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "education": "Farmer Knowledge",
+    "about": "About Us",
+    "contact": "Contact",
+    "admin": "Admin"
+  },
+  "hero": {
+    "trust_badge": "Kisano ka bharosa, hamari pehchaan",
+    "title": "Trusted <highlight>Khad, Beej & Dawai</highlight> Store for Every Farmer",
+    "subtitle": "M/S Ramgopal Gupta provides top-quality fertilizers, high-yield seeds, and effective pesticides at wholesale & retail prices in Mangawan, Rewa.",
+    "whatsapp_btn": "Contact on WhatsApp",
+    "visit_btn": "Visit Shop",
+    "stats_years": "Years of Trust",
+    "stats_genuine": "Genuine Products",
+    "stats_farmers": "Happy Farmers"
+  },
+  "about": {
+    "badge": "About Our Shop",
+    "title": "Empowering Farmers with Quality Agriculture Supplies",
+    "desc": "Located at the heart of Mangawan, Rewa, M/S Ramgopal Gupta has been the backbone for local farmers for over two decades. We believe in providing not just products, but solutions that yield better crops and prosperous lives.",
+    "years": "Years of Excellence",
+    "f1_title": "100% Genuine Products",
+    "f1_desc": "We source directly from top brands to ensure you get authentic fertilizers and seeds.",
+    "f2_title": "Wholesale & Retail",
+    "f2_desc": "Whether you need a single bag or bulk quantities, we offer the best prices for all.",
+    "f3_title": "Expert Guidance",
+    "f3_desc": "Our experienced staff helps you choose the right products for your specific crop needs.",
+    "f4_title": "Years of Trust",
+    "f4_desc": "Serving the farming community of Mangawan and Rewa with honesty and dedication."
+  },
+  "categories": {
+    "badge": "Our Products",
+    "title": "Everything Your Farm Needs",
+    "desc": "From preparing the soil to protecting the harvest, we stock all top-quality agricultural inputs.",
+    "c1_title": "Fertilizers (Khad)",
+    "c1_desc": "Urea, DAP, NPK, and organic fertilizers for maximum crop yield and soil health.",
+    "c2_title": "Premium Seeds (Beej)",
+    "c2_desc": "High-germination hybrid and traditional seeds for wheat, paddy, soybean, and pulses.",
+    "c3_title": "Pesticides (Dawai)",
+    "c3_desc": "Effective crop protection chemicals to safeguard your harvest from diseases.",
+    "c4_title": "Insecticides & Weedicides",
+    "c4_desc": "Targeted solutions to keep your fields weed-free and protect plants from harmful insects.",
+    "enquire": "Enquire Now"
+  },
+  "whyus": {
+    "badge": "Why Choose Us",
+    "title": "The Preferred Choice of Local Farmers",
+    "desc": "We don't just sell products; we partner with you for a better harvest.",
+    "r1_title": "Genuine Products",
+    "r1_desc": "100% original and branded agri-inputs.",
+    "r2_title": "Best Prices",
+    "r2_desc": "Competitive rates to keep your farming affordable.",
+    "r3_title": "Farmer Support",
+    "r3_desc": "Always available to hear your queries.",
+    "r4_title": "Trusted by Farmers",
+    "r4_desc": "Thousands of happy farmers in Mangawan.",
+    "r5_title": "Wholesale & Retail",
+    "r5_desc": "Buy one bag or a hundred, same great service.",
+    "r6_title": "Expert Guidance",
+    "r6_desc": "Free advice on crop protection and yield."
+  },
+  "brands": {
+    "title": "Authorized Dealers for Top Agriculture Brands"
+  },
+  "testimonials": {
+    "badge": "Testimonials",
+    "title": "Kya Kehte Hain Hamare Kisan Bhai?",
+    "desc": "Real experiences from local farmers who trust us for their agricultural needs."
+  },
+  "gallery": {
+    "badge": "Gallery",
+    "title": "A Glimpse of Our Store",
+    "desc": "See the scale of our operations and the quality products we deliver to our farmers everyday."
+  },
+  "contact": {
+    "call_now": "Call Now",
+    "inquiry": "Inquiry",
+    "directions": "Directions"
+  }
+}
