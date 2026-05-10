@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import ContactFooter from './components/ContactFooter';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import StickyMobileBar from './components/StickyMobileBar';
+import ScrollToTop from './components/ScrollToTop';
 
 import Home from './pages/Home';
 import Products from './pages/Products';
@@ -13,6 +14,7 @@ import AdminDashboard from './pages/AdminDashboard';
 function App() {
   return (
     <div className="font-sans antialiased text-slate-800 bg-slate-50 min-h-screen">
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
