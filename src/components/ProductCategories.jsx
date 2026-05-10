@@ -19,25 +19,25 @@ export default function ProductCategories() {
       id: 1,
       title: t('categories.c1_title'),
       description: t('categories.c1_desc'),
-      image: "/images/img1.webp",
+      image: "https://images.unsplash.com/photo-1592982537447-6f29cb9b0999?auto=format&fit=crop&w=800&q=80",
     },
     {
       id: 2,
       title: t('categories.c2_title'),
       description: t('categories.c2_desc'),
-      image: "/images/img2.webp",
+      image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=800&q=80",
     },
     {
       id: 3,
       title: t('categories.c3_title'),
       description: t('categories.c3_desc'),
-      image: "/images/img3.webp",
+      image: "https://images.unsplash.com/photo-1586771107445-d3ca888129ff?auto=format&fit=crop&w=800&q=80",
     },
     {
       id: 4,
       title: t('categories.c4_title'),
       description: t('categories.c4_desc'),
-      image: "/images/img4.webp",
+      image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=800&q=80",
     }
   ];
 
