@@ -1,146 +1,190 @@
 import { motion } from 'framer-motion';
-import { FaWhatsapp, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaWhatsapp, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
-// Counter Hook for animated numbers
 const useCounter = (end, duration = 2) => {
   const [count, setCount] = useState(0);
-
   useEffect(() => {
     let startTimestamp = null;
     const step = (timestamp) => {
       if (!startTimestamp) startTimestamp = timestamp;
       const progress = Math.min((timestamp - startTimestamp) / (duration * 1000), 1);
       setCount(Math.floor(progress * end));
-      if (progress < 1) {
-        window.requestAnimationFrame(step);
-      }
+      if (progress < 1) window.requestAnimationFrame(step);
     };
     window.requestAnimationFrame(step);
   }, [end, duration]);
-
   return count;
 };
 
 export default function Hero() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isHindi = i18n.language === 'hi';
   const yearsTrust = useCounter(25);
   const happyFarmers = useCounter(10);
   const productsAvailable = useCounter(500);
 
   return (
-    <section id="home" className="relative pt-24 pb-12 md:pt-32 md:pb-24 lg:pt-40 lg:pb-32 overflow-hidden bg-slate-50">
-      {/* Premium Background decoration */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 right-0 -mr-48 -mt-48 w-96 h-96 rounded-full bg-primary-100/50 blur-3xl opacity-70 animate-pulse"></div>
-        <div className="absolute bottom-0 left-0 -ml-48 -mb-48 w-96 h-96 rounded-full bg-secondary-100/50 blur-3xl opacity-70 animate-pulse" style={{ animationDelay: '2s' }}></div>
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Full background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-primary-950 to-slate-900 z-0" />
+      
+      {/* Background image overlay */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/images/img3.webp"
+          alt="Agriculture"
+          className="w-full h-full object-cover opacity-20"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/70 to-transparent" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      {/* Decorative circles */}
+      <div className="absolute top-20 right-10 w-80 h-80 rounded-full bg-primary-500/10 blur-3xl animate-pulse z-0" />
+      <div className="absolute bottom-20 left-10 w-64 h-64 rounded-full bg-secondary-500/10 blur-3xl animate-pulse z-0" style={{ animationDelay: '2s' }} />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
-          {/* Text Content */}
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
+          {/* Left: Text */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center lg:text-left"
+            transition={{ duration: 0.7 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-primary-700 font-semibold text-sm mb-6 shadow-sm border border-slate-100">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary-600"></span>
+            {/* Trust badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/20 border border-primary-500/40 text-primary-300 text-sm font-semibold mb-8">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-400" />
               </span>
-              {t('hero.trust_badge')}
+              {isHindi ? "मंगावन, रीवा का भरोसेमंद कृषि स्टोर" : "Trusted Agriculture Store in Mangawan, Rewa"}
             </div>
-            
-            <h1 
-              className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-slate-900 leading-tight mb-6"
-              dangerouslySetInnerHTML={{ __html: t('hero.title').replace('<highlight>', '<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-secondary-500">').replace('</highlight>', '</span>') }}
-            />
-            
-            <p className="text-lg md:text-xl text-slate-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-              {t('hero.subtitle')}
+
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-extrabold text-white leading-tight mb-6">
+              {isHindi ? (
+                <>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">खाद, बीज</span>
+                  <br />और दवाई
+                </>
+              ) : (
+                <>
+                  Quality <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">Khad, Beej</span>
+                  <br />& Dawai
+                </>
+              )}
+            </h1>
+
+            <p className="text-lg md:text-xl text-slate-300 mb-10 leading-relaxed max-w-xl">
+              {isHindi
+                ? "थोक और फुटकर दोनों में सर्वोत्तम दाम। किसानों का विश्वसनीय साथी — 20+ वर्षों से मंगावन की सेवा में।"
+                : "Best prices for wholesale & retail. Farmer's trusted partner — serving Mangawan for 20+ years."}
             </p>
-            
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-              <a href="https://wa.me/919425184962" target="_blank" rel="noreferrer" className="w-full sm:w-auto flex items-center justify-center gap-2 bg-gradient-to-r from-primary-600 to-primary-700 text-white px-8 py-3.5 rounded-xl font-semibold hover:from-primary-700 hover:to-primary-800 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
-                <FaWhatsapp className="text-xl" />
-                {t('hero.whatsapp_btn')}
+
+            <div className="flex flex-col sm:flex-row gap-4 mb-14">
+              <a
+                href="https://wa.me/919425184962"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all shadow-xl hover:shadow-green-500/40 hover:-translate-y-1"
+              >
+                <FaWhatsapp className="text-2xl" />
+                {isHindi ? "WhatsApp पर पूछें" : "WhatsApp Enquiry"}
               </a>
-              <a href="#contact" className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white text-slate-800 border-2 border-slate-200 px-8 py-3.5 rounded-xl font-semibold hover:border-primary-600 hover:text-primary-600 transition-all shadow-sm hover:shadow-md">
-                <FaMapMarkerAlt />
-                {t('hero.visit_btn')}
+              <a
+                href="tel:+919425184962"
+                className="flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-2xl font-bold text-lg transition-all"
+              >
+                <FaPhone />
+                +91 94251 84962
               </a>
             </div>
 
-            {/* Premium Quick Stats */}
-            <div className="mt-12 grid grid-cols-3 gap-4 lg:gap-8 pt-8 border-t border-slate-200 max-w-lg mx-auto lg:mx-0">
-              <div className="text-center lg:text-left group cursor-default">
-                <h3 className="font-heading font-black text-3xl md:text-4xl text-slate-800 group-hover:text-primary-600 transition-colors">{yearsTrust}+</h3>
-                <p className="text-sm md:text-base text-slate-500 font-medium mt-1">{t('hero.stats_years')}</p>
-              </div>
-              <div className="text-center lg:text-left group cursor-default border-l border-slate-200 pl-4 lg:pl-8">
-                <h3 className="font-heading font-black text-3xl md:text-4xl text-slate-800 group-hover:text-primary-600 transition-colors">{productsAvailable}+</h3>
-                <p className="text-sm md:text-base text-slate-500 font-medium mt-1">{t('hero.stats_genuine')}</p>
-              </div>
-              <div className="text-center lg:text-left group cursor-default border-l border-slate-200 pl-4 lg:pl-8">
-                <h3 className="font-heading font-black text-3xl md:text-4xl text-slate-800 group-hover:text-primary-600 transition-colors">{happyFarmers}k+</h3>
-                <p className="text-sm md:text-base text-slate-500 font-medium mt-1">{t('hero.stats_farmers')}</p>
-              </div>
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-white/10">
+              {[
+                { value: `${yearsTrust}+`, label: isHindi ? "वर्षों का अनुभव" : "Years Experience" },
+                { value: `${productsAvailable}+`, label: isHindi ? "उत्पाद उपलब्ध" : "Products Available" },
+                { value: `${happyFarmers}k+`, label: isHindi ? "खुश किसान" : "Happy Farmers" },
+              ].map((stat, i) => (
+                <div key={i} className="text-center">
+                  <div className="text-3xl md:text-4xl font-heading font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">{stat.value}</div>
+                  <div className="text-slate-400 text-sm mt-1 font-medium">{stat.label}</div>
+                </div>
+              ))}
             </div>
           </motion.div>
 
-          {/* Image/Illustration */}
-          <motion.div 
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative lg:h-[600px] flex items-center justify-center mt-10 lg:mt-0"
+          {/* Right: Image card stack */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="relative hidden lg:block"
           >
-            {/* Main Image with Glassmorphism overlay */}
-            <div className="relative z-10 w-full max-w-md lg:max-w-none">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
-                <img 
-                  src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-                  alt="Indian Farmer in field" 
-                  className="w-full h-[400px] lg:h-[500px] object-cover scale-105 hover:scale-110 transition-transform duration-1000"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+            {/* Main image */}
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-white/10">
+              <img
+                src="/images/img1.webp"
+                alt="Store products"
+                className="w-full h-[480px] object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
+              {/* Location badge */}
+              <div className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-xl rounded-2xl p-4 border border-white/20">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-primary-500 flex items-center justify-center">
+                    <FaMapMarkerAlt className="text-white" />
+                  </div>
+                  <div>
+                    <p className="text-white font-bold">M/S Ramgopal Gupta</p>
+                    <p className="text-slate-300 text-sm">Bus Stand Mangawan, Rewa, MP</p>
+                  </div>
+                </div>
               </div>
-              
-              {/* Floating badges with Glassmorphism */}
-              <motion.div 
-                animate={{ y: [0, -10, 0] }}
-                transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                className="absolute -top-6 -right-6 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-xl flex items-center gap-4 border border-white/40"
-              >
-                <div className="w-12 h-12 rounded-xl bg-secondary-100 flex items-center justify-center text-secondary-600 font-bold text-xl shadow-inner">
-                  ₹
-                </div>
-                <div>
-                  <p className="text-xs text-slate-500 font-semibold uppercase tracking-wider">Best Price</p>
-                  <p className="font-bold text-slate-800">Wholesale Rates</p>
-                </div>
-              </motion.div>
-
-              <motion.div 
-                animate={{ y: [0, 10, 0] }}
-                transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1 }}
-                className="absolute -bottom-8 -left-6 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-xl flex items-center gap-4 border border-white/40"
-              >
-                <div className="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center text-primary-600 text-2xl shadow-inner">
-                  🌱
-                </div>
-                <div>
-                  <p className="text-xs text-slate-500 font-semibold uppercase tracking-wider">Top Quality</p>
-                  <p className="font-bold text-slate-800">High Yield Seeds</p>
-                </div>
-              </motion.div>
             </div>
+
+            {/* Floating badge top right */}
+            <motion.div
+              animate={{ y: [0, -12, 0] }}
+              transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
+              className="absolute -top-6 -right-6 bg-white rounded-2xl shadow-2xl p-4 flex items-center gap-3 border border-slate-100"
+            >
+              <div className="w-12 h-12 rounded-xl bg-secondary-100 flex items-center justify-center text-secondary-600 font-extrabold text-xl">₹</div>
+              <div>
+                <p className="text-xs text-slate-500 font-semibold uppercase tracking-wider">Best Price</p>
+                <p className="font-bold text-slate-800">Wholesale Rates</p>
+              </div>
+            </motion.div>
+
+            {/* Floating badge bottom left */}
+            <motion.div
+              animate={{ y: [0, 12, 0] }}
+              transition={{ repeat: Infinity, duration: 5, ease: 'easeInOut', delay: 1 }}
+              className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-2xl p-4 flex items-center gap-3 border border-slate-100"
+            >
+              <div className="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center text-2xl">🌾</div>
+              <div>
+                <p className="text-xs text-slate-500 font-semibold uppercase tracking-wider">100% Genuine</p>
+                <p className="font-bold text-slate-800">Certified Seeds</p>
+              </div>
+            </motion.div>
           </motion.div>
+
         </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-slate-400 text-sm">
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ repeat: Infinity, duration: 1.5, ease: 'easeInOut' }}
+          className="w-5 h-8 border-2 border-slate-500 rounded-full flex items-start justify-center p-1"
+        >
+          <div className="w-1 h-2 bg-slate-400 rounded-full" />
+        </motion.div>
       </div>
     </section>
   );
