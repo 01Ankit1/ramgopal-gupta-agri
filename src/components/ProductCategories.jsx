@@ -19,7 +19,7 @@ export default function ProductCategories() {
       id: 1,
       title: t('categories.c1_title'),
       description: t('categories.c1_desc'),
-      image: "https://images.unsplash.com/photo-1592982537447-6f29cb9b0999?auto=format&fit=crop&w=800&q=80",
+      image: "/images/fertilizer.jpg",
     },
     {
       id: 2,
