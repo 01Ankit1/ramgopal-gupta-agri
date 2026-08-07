@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
@@ -9,9 +9,10 @@ import { FaWhatsapp } from 'react-icons/fa';
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
   const isHindi = i18n.language === 'hi';
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 30);
@@ -19,17 +20,30 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Scroll to section — navigates to home first if needed
+  const scrollToSection = (sectionId) => {
+    setIsOpen(false);
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+      }, 300);
+    } else {
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const navLinks = [
-    { title: isHindi ? 'होम' : 'Home', href: '/' },
-    { title: isHindi ? 'उत्पाद' : 'Products', href: '/products' },
-    { title: isHindi ? 'हमारे बारे में' : 'About Us', href: '#about' },
-    { title: isHindi ? 'संपर्क' : 'Contact', href: '#contact' },
+    { title: isHindi ? 'होम' : 'Home', href: '/', isRoute: true },
+    { title: isHindi ? 'उत्पाद' : 'Products', href: '/products', isRoute: true },
+    { title: isHindi ? 'हमारे बारे में' : 'About Us', section: 'about' },
+    { title: isHindi ? 'संपर्क' : 'Contact', section: 'contact' },
   ];
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-500 ${
-      scrolled 
-        ? 'bg-white shadow-lg shadow-slate-200/50 py-2' 
+      scrolled
+        ? 'bg-white shadow-lg shadow-slate-200/50 py-2'
         : 'bg-white/95 backdrop-blur-md py-3'
     }`}>
       {/* Top contact strip */}
@@ -62,20 +76,31 @@ export default function Navbar() {
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <Link
-                key={link.title}
-                to={link.href}
-                className={`text-sm font-semibold transition-all relative group ${
-                  location.pathname === link.href
-                    ? 'text-primary-600'
-                    : 'text-slate-600 hover:text-primary-600'
-                }`}
-              >
-                {link.title}
-                <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary-600 transition-all duration-300 ${
-                  location.pathname === link.href ? 'w-full' : 'w-0 group-hover:w-full'
-                }`} />
-              </Link>
+              link.isRoute ? (
+                <Link
+                  key={link.title}
+                  to={link.href}
+                  className={`text-sm font-semibold transition-all relative group ${
+                    location.pathname === link.href
+                      ? 'text-primary-600'
+                      : 'text-slate-600 hover:text-primary-600'
+                  }`}
+                >
+                  {link.title}
+                  <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary-600 transition-all duration-300 ${
+                    location.pathname === link.href ? 'w-full' : 'w-0 group-hover:w-full'
+                  }`} />
+                </Link>
+              ) : (
+                <button
+                  key={link.title}
+                  onClick={() => scrollToSection(link.section)}
+                  className="text-sm font-semibold text-slate-600 hover:text-primary-600 transition-all relative group"
+                >
+                  {link.title}
+                  <span className="absolute -bottom-1 left-0 h-0.5 bg-primary-600 w-0 group-hover:w-full transition-all duration-300" />
+                </button>
+              )
             ))}
 
             <div className="flex items-center gap-3 pl-6 border-l border-slate-200">
@@ -116,14 +141,24 @@ export default function Navbar() {
           >
             <div className="px-4 py-4 space-y-1">
               {navLinks.map((link) => (
-                <Link
-                  key={link.title}
-                  to={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="flex items-center px-4 py-3 text-base font-semibold text-slate-700 hover:text-primary-600 hover:bg-primary-50 rounded-xl transition-colors"
-                >
-                  {link.title}
-                </Link>
+                link.isRoute ? (
+                  <Link
+                    key={link.title}
+                    to={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className="flex items-center px-4 py-3 text-base font-semibold text-slate-700 hover:text-primary-600 hover:bg-primary-50 rounded-xl transition-colors"
+                  >
+                    {link.title}
+                  </Link>
+                ) : (
+                  <button
+                    key={link.title}
+                    onClick={() => scrollToSection(link.section)}
+                    className="w-full text-left flex items-center px-4 py-3 text-base font-semibold text-slate-700 hover:text-primary-600 hover:bg-primary-50 rounded-xl transition-colors"
+                  >
+                    {link.title}
+                  </button>
+                )
               ))}
               <div className="pt-3 border-t border-slate-100 flex gap-3">
                 <a href="tel:+919425184962" onClick={() => setIsOpen(false)}
