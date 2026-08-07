@@ -62,7 +62,7 @@ export default function WhyChooseUs() {
       {/* Background image */}
       <div className="absolute inset-0">
         <img
-          src="/images/img4.webp"
+          src="./images/img4.webp"
           alt="bg"
           className="w-full h-full object-cover opacity-10"
         />

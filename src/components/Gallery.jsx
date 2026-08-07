@@ -8,12 +8,12 @@ export default function Gallery() {
   const images = [
     // Shop photos (from local)
     {
-      src: "/images/img1.webp",
+      src: "./images/img1.webp",
       alt: "Our Store", altHi: "हमारी दुकान",
       colSpan: "col-span-1 md:col-span-2", rowSpan: "row-span-2"
     },
     {
-      src: "/images/img2.webp",
+      src: "./images/img2.webp",
       alt: "Store Front", altHi: "दुकान का दृश्य",
       colSpan: "col-span-1", rowSpan: "row-span-1"
     },
@@ -39,7 +39,7 @@ export default function Gallery() {
       colSpan: "col-span-1", rowSpan: "row-span-1"
     },
     {
-      src: "/images/img3.webp",
+      src: "./images/img3.webp",
       alt: "Products Stock", altHi: "उत्पाद स्टॉक",
       colSpan: "col-span-1 md:col-span-2", rowSpan: "row-span-1"
     },

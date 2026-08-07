@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
       category: "Fertilizers",
       categoryHi: "उर्वरक",
       readTime: "5 min read",
-      image: "/images/img1.webp",
+      image: "./images/img1.webp",
       excerpt: "Understand the nitrogen benefits of Urea and how it boosts the early vegetative growth of your crops.",
       excerptHi: "यूरिया के नाइट्रोजन लाभों को समझें और यह आपकी फसलों के प्रारंभिक विकास को कैसे बढ़ावा देता है।"
     },
@@ -22,7 +22,7 @@ import { Link } from 'react-router-dom';
       category: "Fertilizers",
       categoryHi: "उर्वरक",
       readTime: "7 min read",
-      image: "/images/img2.webp",
+      image: "./images/img2.webp",
       excerpt: "A comprehensive guide on when to apply DAP and when to switch to NPK for balanced soil nutrients.",
       excerptHi: "संतुलित मिट्टी के पोषक तत्वों के लिए DAP और NPK का उपयोग कब करें, इस पर एक व्यापक मार्गदर्शिका।"
     },
@@ -33,7 +33,7 @@ import { Link } from 'react-router-dom';
       category: "Seasonal Guide",
       categoryHi: "मौसमी गाइड",
       readTime: "10 min read",
-      image: "/images/img3.webp",
+      image: "./images/img3.webp",
       excerpt: "Protect your wheat and mustard crops from frost and early pests with this expert guide.",
       excerptHi: "इस विशेषज्ञ गाइड के साथ अपनी गेहूं और सरसों की फसलों को पाले और शुरुआती कीटों से बचाएं।"
     }
@@ -50,7 +50,7 @@ export default function Education() {
       <div className="relative bg-slate-900 text-white py-24 overflow-hidden rounded-b-[3rem] shadow-xl mb-12">
         <div className="absolute inset-0">
           <img 
-            src="/images/img4.webp" 
+            src="./images/img4.webp" 
             alt="Agriculture Background" 
             className="w-full h-full object-cover opacity-40 mix-blend-overlay"
           />

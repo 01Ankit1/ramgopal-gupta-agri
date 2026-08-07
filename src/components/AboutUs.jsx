@@ -52,12 +52,12 @@ export default function AboutUs() {
             {/* Image grid */}
             <div className="grid grid-cols-2 gap-4">
               <img
-                src="/images/img1.webp"
+                src="./images/img1.webp"
                 alt="Store"
                 className="rounded-3xl w-full h-72 object-cover shadow-xl"
               />
               <img
-                src="/images/img2.webp"
+                src="./images/img2.webp"
                 alt="Products"
                 className="rounded-3xl w-full h-72 object-cover mt-10 shadow-xl"
               />

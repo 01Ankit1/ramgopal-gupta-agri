@@ -36,7 +36,7 @@ export default function ContactFooter() {
           <div className="lg:col-span-4">
             <div className="mb-5">
               <img
-                src="/logo.png"
+                src="./logo.png"
                 alt="M/S Ramgopal Gupta Logo"
                 className="h-20 w-auto object-contain bg-white p-2 rounded-2xl"
                 onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/200x80/15803d/FFF?text=RG+Agri&font=montserrat"; }}

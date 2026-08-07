@@ -34,7 +34,7 @@ export default function Hero() {
       {/* Background image overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/images/img3.webp"
+          src="./images/img3.webp"
           alt="Agriculture"
           className="w-full h-full object-cover opacity-20"
         />
@@ -127,7 +127,7 @@ export default function Hero() {
             {/* Main image */}
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-white/10">
               <img
-                src="/images/img1.webp"
+                src="./images/img1.webp"
                 alt="Store products"
                 className="w-full h-[480px] object-cover"
               />

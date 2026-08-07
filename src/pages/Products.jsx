@@ -15,7 +15,7 @@ export const productsList = [
     badgeHi: "सबसे ज्यादा बिकने वाला",
     badgeColor: "bg-amber-500",
     price: "₹266.50",
-    image: "/images/fertilizer.jpg",
+    image: "./images/fertilizer.jpg",
     description: "High quality nitrogen fertilizer with slow release neem coating for better absorption.",
     descriptionHi: "धीमी गति से निकलने वाले नीम लेप के साथ उच्च गुणवत्ता वाला नाइट्रोजन उर्वरक।"
   },
@@ -29,7 +29,7 @@ export const productsList = [
     badgeHi: "शीर्ष ब्रांड",
     badgeColor: "bg-primary-600",
     price: "₹1,350",
-    image: "/images/fertilizer.jpg",
+    image: "./images/fertilizer.jpg",
     description: "Excellent source of Phosphorus and Nitrogen for strong root development.",
     descriptionHi: "मजबूत जड़ विकास के लिए फास्फोरस और नाइट्रोजन का उत्कृष्ट स्रोत।"
   },
@@ -85,7 +85,7 @@ export const productsList = [
     badgeHi: "संतुलित",
     badgeColor: "bg-blue-600",
     price: "₹1,450 / 50kg",
-    image: "/images/fertilizer.jpg",
+    image: "./images/fertilizer.jpg",
     description: "Balanced water-soluble fertilizer for foliar and drip irrigation application.",
     descriptionHi: "पर्णीय और ड्रिप सिंचाई के लिए संतुलित जल-घुलनशील उर्वरक।"
   },
@@ -113,7 +113,7 @@ export const productsList = [
     badgeHi: "मिट्टी स्वास्थ्य",
     badgeColor: "bg-teal-600",
     price: "₹950 / 50kg",
-    image: "/images/fertilizer.jpg",
+    image: "./images/fertilizer.jpg",
     description: "Improves crop quality, yield, and resistance to stress and disease.",
     descriptionHi: "फसल की गुणवत्ता, उपज और तनाव व रोग प्रतिरोधक क्षमता को बेहतर बनाता है।"
   }

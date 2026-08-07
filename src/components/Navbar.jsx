@@ -22,8 +22,8 @@ export default function Navbar() {
   const navLinks = [
     { title: isHindi ? 'होम' : 'Home', href: '/' },
     { title: isHindi ? 'उत्पाद' : 'Products', href: '/products' },
-    { title: isHindi ? 'हमारे बारे में' : 'About Us', href: '/#about' },
-    { title: isHindi ? 'संपर्क' : 'Contact', href: '/#contact' },
+    { title: isHindi ? 'हमारे बारे में' : 'About Us', href: '#about' },
+    { title: isHindi ? 'संपर्क' : 'Contact', href: '#contact' },
   ];
 
   return (
@@ -52,7 +52,7 @@ export default function Navbar() {
 
           <Link to="/" className="flex items-center gap-2" onClick={() => window.scrollTo(0, 0)}>
             <img
-              src="/logo.png"
+              src="./logo.png"
               alt="M/S Ramgopal Gupta"
               className="h-12 md:h-14 w-auto object-contain"
               onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/200x80/00A651/FFF?text=RG+Agri&font=montserrat"; }}
