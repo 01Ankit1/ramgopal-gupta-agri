@@ -1,40 +1,60 @@
 {
+  "seo": {
+    "title": "M/S Ramgopal Gupta — Khad, Beej & Dawai | Wholesale & Retail | Mangawan, Rewa",
+    "description": "Trusted agri-inputs shop at Bus Stand Mangawan, Rewa (MP) 486111. Fertilizers like Urea, DAP & NPK, certified seeds and crop protection at wholesale & retail rates. GST billing with batch numbers, season credit for regular dealers, 24-hour loading and truck/trolley transport.",
+    "products_title": "Products — M/S Ramgopal Gupta, Mangawan",
+    "products_description": "Fertilizers, seeds, pesticides and weedicides at wholesale & retail rates in Mangawan, Rewa. GST billing with batch numbers, bulk supply and transport arrangement.",
+    "product_detail_title": "{{product}} — M/S Ramgopal Gupta"
+  },
   "nav": {
     "home": "Home",
     "products": "Products",
     "education": "Farmer Knowledge",
     "about": "About Us",
     "contact": "Contact",
-    "admin": "Admin"
+    "gallery": "Gallery",
+    "admin": "Admin",
+    "enquiry": "Enquiry",
+    "call": "Call",
+    "topbar": "🌾 Trusted Agriculture Store — Mangawan, Rewa, MP"
   },
   "hero": {
-    "trust_badge": "Kisano ka bharosa, hamari pehchaan",
-    "title": "Trusted <highlight>Khad, Beej & Dawai</highlight> Store for Every Farmer",
-    "subtitle": "M/S Ramgopal Gupta provides top-quality fertilizers, high-yield seeds, and effective pesticides at wholesale & retail prices in Mangawan, Rewa.",
-    "whatsapp_btn": "Contact on WhatsApp",
-    "visit_btn": "Visit Shop",
-    "stats_years": "Years of Trust",
-    "stats_genuine": "Genuine Products",
-    "stats_farmers": "Happy Farmers"
+    "badge": "Trusted Agriculture Store in Mangawan, Rewa",
+    "title_pre": "Quality ",
+    "title_highlight": "Khad, Beej",
+    "title_post": "& Dawai",
+    "subtitle": "Genuine agri-inputs for farmers, retailers and wholesalers alike. Wholesale rates, GST billing with batch numbers — serving Mangawan with trust for 20+ years.",
+    "whatsapp_btn": "WhatsApp Enquiry",
+    "stats_years": "Years Experience",
+    "stats_products": "Products Available",
+    "stats_farmers": "Happy Farmers",
+    "location_name": "M/S Ramgopal Gupta",
+    "location_address": "Bus Stand Mangawan, Rewa, MP",
+    "price_badge_label": "Best Price",
+    "price_badge_value": "Wholesale Rates",
+    "genuine_badge_label": "100% Genuine",
+    "genuine_badge_value": "Certified Seeds"
   },
   "about": {
     "badge": "About Our Shop",
-    "title": "Empowering Farmers with Quality Agriculture Supplies",
-    "desc": "Located at the heart of Mangawan, Rewa, M/S Ramgopal Gupta has been the backbone for local farmers for over two decades. We believe in providing not just products, but solutions that yield better crops and prosperous lives.",
-    "years": "Years of Excellence",
+    "title": "Quality Agri-Supplies for Farmers, Retailers & Wholesalers",
+    "desc": "Located at Bus Stand Mangawan, Rewa, M/S Ramgopal Gupta has been the backbone of local farming for over two decades. Farmers get honest advice and genuine inputs; retailers and dealers get true wholesale rates, GST billing with batch numbers, and dependable bulk supply — all under one roof.",
+    "years_badge": "Years",
+    "trust_title": "Years of Trust",
+    "trust_sub": "Serving Farmers & Dealers",
     "f1_title": "100% Genuine Products",
-    "f1_desc": "We source directly from top brands to ensure you get authentic fertilizers and seeds.",
-    "f2_title": "Wholesale & Retail",
-    "f2_desc": "Whether you need a single bag or bulk quantities, we offer the best prices for all.",
+    "f1_desc": "We source directly from top brands — every bag is authentic and every bill carries its batch number.",
+    "f2_title": "24-Hour Loading & Transport",
+    "f2_desc": "Round-the-clock loading from our godown, with truck and trolley transport arranged right up to your village or shop.",
     "f3_title": "Expert Guidance",
-    "f3_desc": "Our experienced staff helps you choose the right products for your specific crop needs.",
-    "f4_title": "Years of Trust",
-    "f4_desc": "Serving the farming community of Mangawan and Rewa with honesty and dedication."
+    "f3_desc": "Our experienced staff helps you choose the right products for your specific crop and season.",
+    "f4_title": "Dealer & Retailer Support",
+    "f4_desc": "Genuine wholesale margins, GST billing, and season credit for our regular dealers."
   },
   "categories": {
     "badge": "Our Products",
-    "title": "Everything Your Farm Needs",
-    "desc": "From preparing the soil to protecting the harvest, we stock all top-quality agricultural inputs.",
+    "title": "Everything Your Farm — or Shop — Needs",
+    "desc": "From preparing the soil to protecting the harvest, we stock every top-quality agri-input — by the bag for farmers, or in bulk for retailers and dealers.",
     "c1_title": "Fertilizers (Khad)",
     "c1_desc": "Urea, DAP, NPK, and organic fertilizers for maximum crop yield and soil health.",
     "c2_title": "Premium Seeds (Beej)",
@@ -47,37 +67,209 @@
   },
   "whyus": {
     "badge": "Why Choose Us",
-    "title": "The Preferred Choice of Local Farmers",
-    "desc": "We don't just sell products; we partner with you for a better harvest.",
+    "title": "The Preferred Choice of Farmers & Dealers",
+    "desc": "We don't just sell inputs — we partner with farmers for a better harvest, and with retailers for a better business.",
     "r1_title": "Genuine Products",
-    "r1_desc": "100% original and branded agri-inputs.",
-    "r2_title": "Best Prices",
-    "r2_desc": "Competitive rates to keep your farming affordable.",
-    "r3_title": "Farmer Support",
-    "r3_desc": "Always available to hear your queries.",
-    "r4_title": "Trusted by Farmers",
-    "r4_desc": "Thousands of happy farmers in Mangawan.",
-    "r5_title": "Wholesale & Retail",
-    "r5_desc": "Buy one bag or a hundred, same great service.",
+    "r1_desc": "100% original, branded stock — every bill carries the batch number.",
+    "r1_stat_label": "Genuine",
+    "r2_title": "Wholesale Rates",
+    "r2_desc": "True wholesale pricing with healthy margins for retailers and bulk buyers.",
+    "r2_stat_label": "Wholesale",
+    "r3_title": "Farmer & Dealer Support",
+    "r3_desc": "Always a call away — for crop advice or a bulk order, day or night.",
+    "r3_stat_label": "Support",
+    "r4_title": "Trusted by Thousands",
+    "r4_desc": "Farmers and shopkeepers across Mangawan and Rewa buy from us with closed eyes.",
+    "r4_stat_label": "Farmers",
+    "r5_title": "Credit, Loading & Transport",
+    "r5_desc": "Season credit for regular dealers, GST billing, 24-hour loading and truck/trolley transport arrangement.",
+    "r5_stat_label": "Years",
     "r6_title": "Expert Guidance",
-    "r6_desc": "Free advice on crop protection and yield."
+    "r6_desc": "Free advice on crop protection, fertilizer dose and yield.",
+    "r6_stat_label": "Products"
   },
   "brands": {
     "title": "Authorized Dealers for Top Agriculture Brands"
   },
+  "dailytips": {
+    "badge": "Kisan Tip of the Day",
+    "title": "Rabi Fasal Ki Taiyari",
+    "text": "\"Gehun ki buwai se pehle khet mein DAP ka upyog mitti ki urvarta badhata hai. Sahi beej aur uchit matra mein khad ka chunaav karein.\"",
+    "cta": "Poochhtachh Karein"
+  },
   "testimonials": {
-    "badge": "Testimonials",
-    "title": "Kya Kehte Hain Hamare Kisan Bhai?",
-    "desc": "Real experiences from local farmers who trust us for their agricultural needs."
+    "badge": "Farmer Reviews",
+    "title": "What Our Farmers Say",
+    "desc": "Trusted by thousands of farmers across Mangawan & Rewa.",
+    "verified": "✓ Verified",
+    "items": [
+      {
+        "name": "Rameshwar Patel",
+        "village": "Mangawan, Rewa",
+        "text": "Pichle 10 saal se main Ramgopal Gupta ji ki dukan se hi khad aur beej le raha hoon. Fasal ki paadawar hamesha achi hoti hai!"
+      },
+      {
+        "name": "Santosh Tiwari",
+        "village": "Garh Road, Rewa",
+        "text": "Dawai kaun si dalni hai, iski sahi jankari dete hain. Fasal mein keeda lagne par inki batayi dawai ne pura asar kiya. Bahut achhi dukan!"
+      },
+      {
+        "name": "Lalbahadur Singh",
+        "village": "Naigarhi, Rewa",
+        "text": "Wholesale rate mein khad mil jati hai. Duplicate saman ka yahan koi kaam nahi. Mangawan kshetra mein inpar sabse jyada bharosa hai."
+      }
+    ],
+    "stats_farmers": "Happy Farmers",
+    "stats_years": "Years Experience",
+    "stats_products": "Products Available",
+    "stats_rating": "Average Rating"
   },
   "gallery": {
     "badge": "Gallery",
     "title": "A Glimpse of Our Store",
-    "desc": "See the scale of our operations and the quality products we deliver to our farmers everyday."
+    "desc": "See our store, godown stock and the quality products we supply to farmers and shopkeepers every day.",
+    "alts": [
+      "Our Store",
+      "Store Front",
+      "Fertilizer Bags (Khad)",
+      "Wheat Seeds (Beej)",
+      "Pesticide Spray (Dawai)",
+      "Healthy Crop Field",
+      "Products Stock"
+    ]
   },
   "contact": {
     "call_now": "Call Now",
     "inquiry": "Inquiry",
-    "directions": "Directions"
+    "directions": "Directions",
+    "cta_title": "Get in Touch Today!",
+    "cta_desc": "Best rates on agri-inputs — retail, wholesale and bulk orders all welcome.",
+    "brand_desc": "Your trusted partner for genuine Khad, Beej & Dawai in Mangawan for 20+ years. Wholesale rates, GST billing and bulk supply for retailers and dealers.",
+    "quick_links": "Quick Links",
+    "contact_us": "Contact Us",
+    "locate_us": "Locate Us",
+    "address": "Bus Stand Mangawan, Rewa, Madhya Pradesh, India - 486111",
+    "rights": "© {{year}} M/S Ramgopal Gupta. All rights reserved.",
+    "tagline": "Kisano ka bharosa, hamari pehchaan.",
+    "whatsapp_tooltip": "Chat with us!"
+  },
+  "products": {
+    "header_badge": "Wholesale & Retail",
+    "header_title": "Our Products",
+    "header_desc": "Genuine agri-inputs at wholesale and retail rates — GST billing with batch numbers on every purchase.",
+    "details": "Details",
+    "whatsapp_title": "WhatsApp Enquiry",
+    "enquiry_message": "Hello, I would like the details and today's rate for {{product}}.",
+    "bulk_title": "Contact Us for Wholesale Orders",
+    "bulk_desc": "Special rates on bulk purchase, season credit for regular dealers, 24-hour loading and truck/trolley transport. Ask on WhatsApp now!",
+    "bulk_btn": "WhatsApp Wholesale Enquiry",
+    "bulk_message": "Hello, I want to purchase products in wholesale.",
+    "items": {
+      "urea-45": {
+        "name": "Neem Coated Urea (45kg)",
+        "category": "Fertilizer",
+        "badge": "Best Seller",
+        "description": "High quality nitrogen fertilizer with slow release neem coating for better absorption."
+      },
+      "dap-50": {
+        "name": "IFFCO DAP (50kg)",
+        "category": "Fertilizer",
+        "badge": "Top Brand",
+        "description": "Excellent source of Phosphorus and Nitrogen for strong root development."
+      },
+      "wheat-seed": {
+        "name": "Wheat Seeds — Sharbati",
+        "category": "Seeds",
+        "badge": "High Yield",
+        "description": "High yielding, disease resistant wheat seeds. Perfect for Madhya Pradesh climate."
+      },
+      "mustard-seed": {
+        "name": "Mustard Seeds (Sarsoon)",
+        "category": "Seeds",
+        "badge": "Rabi Season",
+        "description": "Premium mustard seeds with high oil content for maximum yield."
+      },
+      "pesticide-plus": {
+        "name": "Bayer Roundup Herbicide",
+        "category": "Weedicide",
+        "badge": "Most Effective",
+        "description": "Effective broad-spectrum systemic herbicide for total weed control."
+      },
+      "npk-fertilizer": {
+        "name": "NPK Fertilizer 19:19:19",
+        "category": "Fertilizer",
+        "badge": "Balanced",
+        "description": "Balanced water-soluble fertilizer for foliar and drip irrigation application."
+      },
+      "fungicide-mancozeb": {
+        "name": "Mancozeb Fungicide",
+        "category": "Pesticide",
+        "badge": "Crop Protector",
+        "description": "Protects crops from fungal diseases. Effective on wheat, vegetables and more."
+      },
+      "potash-mop": {
+        "name": "Muriate of Potash (MOP)",
+        "category": "Fertilizer",
+        "badge": "Soil Health",
+        "description": "Improves crop quality, yield, and resistance to stress and disease."
+      }
+    }
+  },
+  "detail": {
+    "back": "Back to Products",
+    "benefits_title": "Benefits:",
+    "benefits": ["Higher Yield", "Strong Roots", "Disease Resistance", "Long-lasting effect"],
+    "crops_title": "Suitable Crops:",
+    "crops": "Wheat, Paddy, Gram, Mustard",
+    "enquire": "Enquire on WhatsApp",
+    "enquiry_message": "Hello, I am interested in {{product}}. Please share the price and availability.",
+    "not_found": "Product not found"
+  },
+  "education": {
+    "badge": "Farmer Education Platform",
+    "title": "Farmer Knowledge Center",
+    "subtitle": "Expert guides on modern farming, fertilizer choices, and crop protection.",
+    "search_placeholder": "Search articles (e.g. Urea, Seeds)...",
+    "latest": "Latest Articles",
+    "read_more": "Read Full Article",
+    "articles": [
+      {
+        "title": "Why use Urea?",
+        "category": "Fertilizers",
+        "read_time": "5 min read",
+        "excerpt": "Understand the nitrogen benefits of Urea and how it boosts the early vegetative growth of your crops."
+      },
+      {
+        "title": "DAP vs NPK: What to choose?",
+        "category": "Fertilizers",
+        "read_time": "7 min read",
+        "excerpt": "A comprehensive guide on when to apply DAP and when to switch to NPK for balanced soil nutrients."
+      },
+      {
+        "title": "Rabi Season Crop Care Guide",
+        "category": "Seasonal Guide",
+        "read_time": "10 min read",
+        "excerpt": "Protect your wheat and mustard crops from frost and early pests with this expert guide."
+      }
+    ]
+  },
+  "admin": {
+    "page_title": "Admin Dashboard - Ramgopal Gupta",
+    "panel_title": "Admin Panel",
+    "panel_subtitle": "Ramgopal Gupta Agri",
+    "tab_overview": "Overview",
+    "tab_products": "Products",
+    "tab_education": "Articles",
+    "tab_inquiries": "Inquiries",
+    "tab_customers": "Customers",
+    "tab_settings": "Settings",
+    "stat_products": "Total Products",
+    "stat_articles": "Blog Articles",
+    "stat_leads": "WhatsApp Leads",
+    "stat_visits": "Total Visits",
+    "chart_placeholder": "Detailed Analytics Chart Placeholder",
+    "manage": "Manage {{tab}}",
+    "mock_desc": "This is a mock UI. In a production app, this would connect to your database to Create, Read, Update, and Delete records.",
+    "add_record": "+ Add New Record"
   }
 }

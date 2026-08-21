@@ -9,8 +9,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { i18n } = useTranslation();
-  const isHindi = i18n.language === 'hi';
+  const { t } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -34,10 +33,10 @@ export default function Navbar() {
   };
 
   const navLinks = [
-    { title: isHindi ? 'होम' : 'Home', href: '/', isRoute: true },
-    { title: isHindi ? 'उत्पाद' : 'Products', href: '/products', isRoute: true },
-    { title: isHindi ? 'हमारे बारे में' : 'About Us', section: 'about' },
-    { title: isHindi ? 'संपर्क' : 'Contact', section: 'contact' },
+    { title: t('nav.home'), href: '/', isRoute: true },
+    { title: t('nav.products'), href: '/products', isRoute: true },
+    { title: t('nav.about'), section: 'about' },
+    { title: t('nav.contact'), section: 'contact' },
   ];
 
   return (
@@ -49,7 +48,7 @@ export default function Navbar() {
       {/* Top contact strip */}
       <div className="bg-primary-700 text-white text-xs py-1.5 px-4 flex justify-between items-center">
         <span className="hidden sm:block">
-          {isHindi ? '🌾 मंगावन, रीवा का भरोसेमंद कृषि स्टोर' : '🌾 Trusted Agriculture Store — Mangawan, Rewa, MP'}
+          {t('nav.topbar')}
         </span>
         <div className="flex items-center gap-4 ml-auto">
           <a href="tel:+919425184962" className="flex items-center gap-1 hover:text-secondary-300 transition-colors">
@@ -112,7 +111,7 @@ export default function Navbar() {
                 className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-xl font-semibold text-sm transition-all shadow-md hover:shadow-green-200"
               >
                 <FaWhatsapp className="text-base" />
-                {isHindi ? 'पूछताछ' : 'Enquiry'}
+                {t('nav.enquiry')}
               </a>
             </div>
           </div>
@@ -163,7 +162,7 @@ export default function Navbar() {
               <div className="pt-3 border-t border-slate-100 flex gap-3">
                 <a href="tel:+919425184962" onClick={() => setIsOpen(false)}
                   className="flex-1 flex items-center justify-center gap-2 bg-slate-100 text-slate-800 py-3 rounded-xl font-semibold text-sm">
-                  <Phone size={16} /> Call
+                  <Phone size={16} /> {t('nav.call')}
                 </a>
                 <a href="https://wa.me/919425184962" target="_blank" rel="noreferrer" onClick={() => setIsOpen(false)}
                   className="flex-1 flex items-center justify-center gap-2 bg-green-500 text-white py-3 rounded-xl font-semibold text-sm">

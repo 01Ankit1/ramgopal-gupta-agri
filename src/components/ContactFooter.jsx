@@ -3,8 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 export default function ContactFooter() {
-  const { i18n } = useTranslation();
-  const isHindi = i18n.language === 'hi';
+  const { t } = useTranslation();
 
   return (
     <footer id="contact" className="bg-slate-950 text-slate-300 pt-20 pb-8">
@@ -14,10 +13,10 @@ export default function ContactFooter() {
         <div className="bg-gradient-to-r from-primary-600 to-primary-800 rounded-3xl p-8 mb-16 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h3 className="text-2xl font-heading font-bold text-white mb-1">
-              {isHindi ? "अभी संपर्क करें!" : "Get in Touch Today!"}
+              {t('contact.cta_title')}
             </h3>
             <p className="text-primary-200">
-              {isHindi ? "थोक और फुटकर में सर्वोत्तम कृषि उत्पाद पाएं।" : "Get the best agricultural products at wholesale & retail prices."}
+              {t('contact.cta_desc')}
             </p>
           </div>
           <div className="flex gap-4 flex-shrink-0">
@@ -43,9 +42,7 @@ export default function ContactFooter() {
               />
             </div>
             <p className="text-slate-400 mb-6 leading-relaxed text-sm">
-              {isHindi
-                ? "मंगावन में 20+ वर्षों से किसानों का भरोसेमंद साथी। असली खाद, बीज और दवाई सबसे उचित दाम पर।"
-                : "Your trusted partner for authentic agricultural inputs in Mangawan for 20+ years. Quality Khad, Beej & Dawai at the best prices."}
+              {t('contact.brand_desc')}
             </p>
             <div className="flex space-x-3">
               {[FaFacebook, FaInstagram, FaWhatsapp, FaYoutube].map((Icon, i) => (
@@ -58,14 +55,14 @@ export default function ContactFooter() {
 
           {/* Quick Links */}
           <div className="lg:col-span-2">
-            <h4 className="text-white font-heading font-bold mb-5 text-base uppercase tracking-wide">{isHindi ? "त्वरित लिंक" : "Quick Links"}</h4>
+            <h4 className="text-white font-heading font-bold mb-5 text-base uppercase tracking-wide">{t('contact.quick_links')}</h4>
             <ul className="space-y-3 text-sm">
               {[
-                { label: isHindi ? "होम" : "Home", to: "/" },
-                { label: isHindi ? "उत्पाद" : "Products", to: "/products" },
-                { label: isHindi ? "हमारे बारे में" : "About Us", hash: "#about" },
-                { label: isHindi ? "गैलरी" : "Gallery", hash: "#gallery" },
-                { label: isHindi ? "संपर्क" : "Contact", hash: "#contact" },
+                { label: t('nav.home'), to: "/" },
+                { label: t('nav.products'), to: "/products" },
+                { label: t('nav.about'), hash: "#about" },
+                { label: t('nav.gallery'), hash: "#gallery" },
+                { label: t('nav.contact'), hash: "#contact" },
               ].map((link, i) => (
                 <li key={i}>
                   {link.to ? (
@@ -86,11 +83,11 @@ export default function ContactFooter() {
 
           {/* Contact */}
           <div className="lg:col-span-3">
-            <h4 className="text-white font-heading font-bold mb-5 text-base uppercase tracking-wide">{isHindi ? "संपर्क करें" : "Contact Us"}</h4>
+            <h4 className="text-white font-heading font-bold mb-5 text-base uppercase tracking-wide">{t('contact.contact_us')}</h4>
             <ul className="space-y-4 text-sm">
               <li className="flex gap-3">
                 <FaMapMarkerAlt className="text-primary-400 mt-1 flex-shrink-0 text-base" />
-                <span className="text-slate-400">Bus Stand Mangawan, Rewa, Madhya Pradesh, India - 486111</span>
+                <span className="text-slate-400">{t('contact.address')}</span>
               </li>
               <li className="flex gap-3 items-start">
                 <FaPhoneAlt className="text-primary-400 flex-shrink-0 mt-1 text-base" />
@@ -113,7 +110,7 @@ export default function ContactFooter() {
 
           {/* Map */}
           <div className="lg:col-span-3">
-            <h4 className="text-white font-heading font-bold mb-5 text-base uppercase tracking-wide">{isHindi ? "हमें खोजें" : "Locate Us"}</h4>
+            <h4 className="text-white font-heading font-bold mb-5 text-base uppercase tracking-wide">{t('contact.locate_us')}</h4>
             <div className="h-44 rounded-2xl overflow-hidden ring-2 ring-slate-700">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14457.653457198124!2d81.5644837!3d24.6738986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39845ab55b721869%3A0xe781afbd6e7ff2b3!2sMangawan%2C%20Madhya%20Pradesh%20486111!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin"
@@ -130,8 +127,8 @@ export default function ContactFooter() {
 
         {/* Bottom bar */}
         <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-3 text-sm text-slate-500">
-          <p>© {new Date().getFullYear()} M/S Ramgopal Gupta. All rights reserved.</p>
-          <p className="text-primary-500 font-semibold italic">किसानों का भरोसा, हमारी पहचान।</p>
+          <p>{t('contact.rights', { year: new Date().getFullYear() })}</p>
+          <p className="text-primary-500 font-semibold italic">{t('contact.tagline')}</p>
         </div>
       </div>
     </footer>

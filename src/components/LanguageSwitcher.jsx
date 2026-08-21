@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
 
 export default function LanguageSwitcher() {
   const { i18n } = useTranslation();

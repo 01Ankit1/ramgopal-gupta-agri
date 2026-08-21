@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion';
 import { FaWhatsapp } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 
 export default function FloatingWhatsApp() {
+  const { t } = useTranslation();
+
   return (
     <motion.a
       href="https://wa.me/919425184962"
@@ -15,7 +18,7 @@ export default function FloatingWhatsApp() {
       <FaWhatsapp size={32} />
       {/* Tooltip */}
       <span className="absolute right-16 bg-white text-slate-800 text-sm font-semibold px-3 py-1.5 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
-        Chat with us!
+        {t('contact.whatsapp_tooltip')}
       </span>
       {/* Ripple effect */}
       <span className="absolute inset-0 rounded-full border-2 border-[#25D366] animate-ping opacity-75"></span>

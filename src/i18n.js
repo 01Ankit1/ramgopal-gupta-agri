@@ -3,8 +3,8 @@ import { initReactI18next } from 'react-i18next';
 import enTranslations from './locales/en.json';
 import hiTranslations from './locales/hi.json';
 
-// Retrieve saved language from localStorage or default to English
-const savedLanguage = localStorage.getItem('appLanguage') || 'en';
+// Restore saved language from localStorage; default to Hindi
+const savedLanguage = localStorage.getItem('appLanguage') || 'hi';
 
 i18n
   .use(initReactI18next)
@@ -19,5 +19,12 @@ i18n
       escapeValue: false // React already escapes values to prevent XSS
     }
   });
+
+// Persist choice and keep <html lang="..."> in sync
+i18n.on('languageChanged', (lng) => {
+  localStorage.setItem('appLanguage', lng);
+  document.documentElement.lang = lng;
+});
+document.documentElement.lang = savedLanguage;
 
 export default i18n;

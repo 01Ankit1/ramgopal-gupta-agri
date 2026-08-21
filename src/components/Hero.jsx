@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import { FaWhatsapp, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 const useCounter = (end, duration = 2) => {
   const [count, setCount] = useState(0);
@@ -20,8 +19,7 @@ const useCounter = (end, duration = 2) => {
 };
 
 export default function Hero() {
-  const { t, i18n } = useTranslation();
-  const isHindi = i18n.language === 'hi';
+  const { t } = useTranslation();
   const yearsTrust = useCounter(25);
   const happyFarmers = useCounter(10);
   const productsAvailable = useCounter(500);
@@ -35,7 +33,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         <img
           src="./images/img3.webp"
-          alt="Agriculture"
+          alt=""
           className="w-full h-full object-cover opacity-20"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/70 to-transparent" />
@@ -60,27 +58,17 @@ export default function Hero() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-400" />
               </span>
-              {isHindi ? "मंगावन, रीवा का भरोसेमंद कृषि स्टोर" : "Trusted Agriculture Store in Mangawan, Rewa"}
+              {t('hero.badge')}
             </div>
 
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-extrabold text-white leading-tight mb-6">
-              {isHindi ? (
-                <>
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">खाद, बीज</span>
-                  <br />और दवाई
-                </>
-              ) : (
-                <>
-                  Quality <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">Khad, Beej</span>
-                  <br />& Dawai
-                </>
-              )}
+              {t('hero.title_pre')}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">{t('hero.title_highlight')}</span>
+              <br />{t('hero.title_post')}
             </h1>
 
             <p className="text-lg md:text-xl text-slate-300 mb-10 leading-relaxed max-w-xl">
-              {isHindi
-                ? "थोक और फुटकर दोनों में सर्वोत्तम दाम। किसानों का विश्वसनीय साथी — 20+ वर्षों से मंगावन की सेवा में।"
-                : "Best prices for wholesale & retail. Farmer's trusted partner — serving Mangawan for 20+ years."}
+              {t('hero.subtitle')}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-14">
@@ -91,7 +79,7 @@ export default function Hero() {
                 className="flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all shadow-xl hover:shadow-green-500/40 hover:-translate-y-1"
               >
                 <FaWhatsapp className="text-2xl" />
-                {isHindi ? "WhatsApp पर पूछें" : "WhatsApp Enquiry"}
+                {t('hero.whatsapp_btn')}
               </a>
               <a
                 href="tel:+919425184962"
@@ -105,9 +93,9 @@ export default function Hero() {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 pt-8 border-t border-white/10">
               {[
-                { value: `${yearsTrust}+`, label: isHindi ? "वर्षों का अनुभव" : "Years Experience" },
-                { value: `${productsAvailable}+`, label: isHindi ? "उत्पाद उपलब्ध" : "Products Available" },
-                { value: `${happyFarmers}k+`, label: isHindi ? "खुश किसान" : "Happy Farmers" },
+                { value: `${yearsTrust}+`, label: t('hero.stats_years') },
+                { value: `${productsAvailable}+`, label: t('hero.stats_products') },
+                { value: `${happyFarmers}k+`, label: t('hero.stats_farmers') },
               ].map((stat, i) => (
                 <div key={i} className="text-center">
                   <div className="text-3xl md:text-4xl font-heading font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">{stat.value}</div>
@@ -128,7 +116,7 @@ export default function Hero() {
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-white/10">
               <img
                 src="./images/img1.webp"
-                alt="Store products"
+                alt={t('gallery.alts.0')}
                 className="w-full h-[480px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
@@ -139,8 +127,8 @@ export default function Hero() {
                     <FaMapMarkerAlt className="text-white" />
                   </div>
                   <div>
-                    <p className="text-white font-bold">M/S Ramgopal Gupta</p>
-                    <p className="text-slate-300 text-sm">Bus Stand Mangawan, Rewa, MP</p>
+                    <p className="text-white font-bold">{t('hero.location_name')}</p>
+                    <p className="text-slate-300 text-sm">{t('hero.location_address')}</p>
                   </div>
                 </div>
               </div>
@@ -154,8 +142,8 @@ export default function Hero() {
             >
               <div className="w-12 h-12 rounded-xl bg-secondary-100 flex items-center justify-center text-secondary-600 font-extrabold text-xl">₹</div>
               <div>
-                <p className="text-xs text-slate-500 font-semibold uppercase tracking-wider">Best Price</p>
-                <p className="font-bold text-slate-800">Wholesale Rates</p>
+                <p className="text-xs text-slate-500 font-semibold uppercase tracking-wider">{t('hero.price_badge_label')}</p>
+                <p className="font-bold text-slate-800">{t('hero.price_badge_value')}</p>
               </div>
             </motion.div>
 
@@ -167,8 +155,8 @@ export default function Hero() {
             >
               <div className="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center text-2xl">🌾</div>
               <div>
-                <p className="text-xs text-slate-500 font-semibold uppercase tracking-wider">100% Genuine</p>
-                <p className="font-bold text-slate-800">Certified Seeds</p>
+                <p className="text-xs text-slate-500 font-semibold uppercase tracking-wider">{t('hero.genuine_badge_label')}</p>
+                <p className="font-bold text-slate-800">{t('hero.genuine_badge_value')}</p>
               </div>
             </motion.div>
           </motion.div>

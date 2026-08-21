@@ -3,8 +3,7 @@ import { BadgeCheck, Tag, Headset, Heart, Building2, Sprout } from 'lucide-react
 import { useTranslation } from 'react-i18next';
 
 export default function WhyChooseUs() {
-  const { t, i18n } = useTranslation();
-  const isHindi = i18n.language === 'hi';
+  const { t } = useTranslation();
 
   const reasons = [
     {
@@ -13,7 +12,7 @@ export default function WhyChooseUs() {
       title: t('whyus.r1_title'),
       desc: t('whyus.r1_desc'),
       stat: "100%",
-      statLabel: isHindi ? "असली उत्पाद" : "Genuine"
+      statLabel: t('whyus.r1_stat_label')
     },
     {
       icon: <Tag className="w-7 h-7" />,
@@ -21,7 +20,7 @@ export default function WhyChooseUs() {
       title: t('whyus.r2_title'),
       desc: t('whyus.r2_desc'),
       stat: "₹₹",
-      statLabel: isHindi ? "थोक दाम" : "Wholesale"
+      statLabel: t('whyus.r2_stat_label')
     },
     {
       icon: <Headset className="w-7 h-7" />,
@@ -29,7 +28,7 @@ export default function WhyChooseUs() {
       title: t('whyus.r3_title'),
       desc: t('whyus.r3_desc'),
       stat: "24/7",
-      statLabel: isHindi ? "सहायता" : "Support"
+      statLabel: t('whyus.r3_stat_label')
     },
     {
       icon: <Heart className="w-7 h-7" />,
@@ -37,7 +36,7 @@ export default function WhyChooseUs() {
       title: t('whyus.r4_title'),
       desc: t('whyus.r4_desc'),
       stat: "10k+",
-      statLabel: isHindi ? "किसान" : "Farmers"
+      statLabel: t('whyus.r4_stat_label')
     },
     {
       icon: <Building2 className="w-7 h-7" />,
@@ -45,7 +44,7 @@ export default function WhyChooseUs() {
       title: t('whyus.r5_title'),
       desc: t('whyus.r5_desc'),
       stat: "20+",
-      statLabel: isHindi ? "वर्ष" : "Years"
+      statLabel: t('whyus.r5_stat_label')
     },
     {
       icon: <Sprout className="w-7 h-7" />,
@@ -53,7 +52,7 @@ export default function WhyChooseUs() {
       title: t('whyus.r6_title'),
       desc: t('whyus.r6_desc'),
       stat: "500+",
-      statLabel: isHindi ? "उत्पाद" : "Products"
+      statLabel: t('whyus.r6_stat_label')
     }
   ];
 
@@ -63,7 +62,7 @@ export default function WhyChooseUs() {
       <div className="absolute inset-0">
         <img
           src="./images/img4.webp"
-          alt="bg"
+          alt=""
           className="w-full h-full object-cover opacity-10"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-primary-950/90 to-slate-900" />

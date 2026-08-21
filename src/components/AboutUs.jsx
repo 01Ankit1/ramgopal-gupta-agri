@@ -3,8 +3,7 @@ import { ShieldCheck, Truck, Sprout, Handshake, Phone } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 export default function AboutUs() {
-  const { t, i18n } = useTranslation();
-  const isHindi = i18n.language === 'hi';
+  const { t } = useTranslation();
 
   const features = [
     {
@@ -53,12 +52,12 @@ export default function AboutUs() {
             <div className="grid grid-cols-2 gap-4">
               <img
                 src="./images/img1.webp"
-                alt="Store"
+                alt={t('gallery.alts.0')}
                 className="rounded-3xl w-full h-72 object-cover shadow-xl"
               />
               <img
                 src="./images/img2.webp"
-                alt="Products"
+                alt={t('gallery.alts.6')}
                 className="rounded-3xl w-full h-72 object-cover mt-10 shadow-xl"
               />
             </div>
@@ -73,11 +72,11 @@ export default function AboutUs() {
             >
               <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary-600 to-primary-800 flex flex-col items-center justify-center text-white shadow-lg">
                 <span className="text-2xl font-black leading-none">20+</span>
-                <span className="text-xs font-semibold opacity-80">Years</span>
+                <span className="text-xs font-semibold opacity-80">{t('about.years_badge')}</span>
               </div>
               <div>
-                <p className="font-bold text-slate-900 text-base">{isHindi ? "विश्वास का अनुभव" : "Years of Trust"}</p>
-                <p className="text-slate-500 text-sm">{isHindi ? "किसानों की सेवा में" : "Serving Farmers"}</p>
+                <p className="font-bold text-slate-900 text-base">{t('about.trust_title')}</p>
+                <p className="text-slate-500 text-sm">{t('about.trust_sub')}</p>
               </div>
             </motion.div>
 
