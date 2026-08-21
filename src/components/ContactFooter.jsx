@@ -107,7 +107,7 @@ export default function ContactFooter() {
               </li>
               <li className="flex gap-3 items-center">
                 <FaEnvelope className="text-primary-400 flex-shrink-0 text-base" />
-                <span className="text-slate-400">contact@ramgopalgupta.com</span>
+                <a href="mailto:lakhan.gupta1981@gmail.com" className="text-slate-400 hover:text-primary-400 transition-colors">lakhan.gupta1981@gmail.com</a>
               </li>
             </ul>
           </div>
