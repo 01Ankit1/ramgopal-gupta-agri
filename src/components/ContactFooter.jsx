@@ -97,9 +97,13 @@ export default function ContactFooter() {
                   <div><a href="tel:+918085710775" className="hover:text-primary-400 transition-colors">+91 80857 10775</a></div>
                 </div>
               </li>
-              <li className="flex gap-3 items-center">
-                <FaWhatsapp className="text-primary-400 flex-shrink-0 text-base" />
-                <a href="https://wa.me/919425184962" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-primary-400 transition-colors">+91 94251 84962</a>
+              <li className="flex gap-3 items-start">
+                <FaWhatsapp className="text-primary-400 flex-shrink-0 mt-1 text-base" />
+                <div className="text-slate-400 space-y-1">
+                  <div><a href="https://wa.me/919425184962" target="_blank" rel="noreferrer" className="hover:text-primary-400 transition-colors">+91 94251 84962</a></div>
+                  <div><a href="https://wa.me/919993464241" target="_blank" rel="noreferrer" className="hover:text-primary-400 transition-colors">+91 99934 64241</a></div>
+                  <div><a href="https://wa.me/918085710775" target="_blank" rel="noreferrer" className="hover:text-primary-400 transition-colors">+91 80857 10775</a></div>
+                </div>
               </li>
               <li className="flex gap-3 items-center">
                 <FaEnvelope className="text-primary-400 flex-shrink-0 text-base" />
