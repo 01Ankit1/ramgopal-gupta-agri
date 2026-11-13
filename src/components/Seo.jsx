@@ -4,8 +4,8 @@ import { OG_IMAGE, SITE_NAME, SITE_URL } from '../site';
 
 /**
  * Title, description, canonical, Open Graph and Twitter tags for one route.
- * Defaults in index.html cover the first HTML response; this updates them
- * after navigation and for clients that run JavaScript.
+ * The production build copies these into each route's static HTML. This
+ * component updates them again after a client-side navigation.
  */
 export default function Seo({
   title,

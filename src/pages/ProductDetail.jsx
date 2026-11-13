@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Seo from '../components/Seo';
 import { shopPhotoAltKey } from '../site';
+import { buildProductJsonLd, jsonLdScript } from '../seo/productJsonLd';
 import { FaWhatsapp, FaArrowLeft, FaCheckCircle } from 'react-icons/fa';
 import { productsList } from '../data/products';
 
@@ -22,9 +23,18 @@ export default function ProductDetail() {
 
   const name = t(`products.items.${product.id}.name`);
   const description = t(`products.items.${product.id}.description`);
+  const category = t(`products.items.${product.id}.category`);
   const benefits = t('detail.benefits', { returnObjects: true });
   const photoKey = shopPhotoAltKey(product.image);
   const imageAlt = photoKey ? t(`gallery.alts.${photoKey}`) : name;
+  const jsonLd = buildProductJsonLd({
+    id: product.id,
+    name,
+    description,
+    category,
+    image: product.image,
+    price: product.price,
+  });
 
   return (
     <div className="pt-24 pb-20 min-h-screen bg-slate-50">
@@ -33,6 +43,9 @@ export default function ProductDetail() {
         description={t('seo.product_detail_description', { product: name, description })}
         path={`/products/${product.id}`}
       />
+      {jsonLd ? (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdScript(jsonLd) }} />
+      ) : null}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
