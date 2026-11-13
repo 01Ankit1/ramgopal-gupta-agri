@@ -1,15 +1,17 @@
 import { motion } from 'framer-motion';
 import { FaWhatsapp } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
+import { WHATSAPP_URL } from '../site';
 
 export default function FloatingWhatsApp() {
   const { t } = useTranslation();
 
   return (
     <motion.a
-      href="https://wa.me/919425184962"
+      href={WHATSAPP_URL}
       target="_blank"
-      rel="noreferrer"
+      rel="noreferrer noopener"
+      aria-label={t('contact.whatsapp_tooltip')}
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ delay: 1, type: "spring", stiffness: 200, damping: 20 }}

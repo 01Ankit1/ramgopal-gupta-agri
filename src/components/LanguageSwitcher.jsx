@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 
 export default function LanguageSwitcher() {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
 
   const toggleLanguage = () => {
     const newLang = i18n.language === 'en' ? 'hi' : 'en';
@@ -11,7 +11,9 @@ export default function LanguageSwitcher() {
 
   return (
     <button
+      type="button"
       onClick={toggleLanguage}
+      aria-label={t('nav.language')}
       className="flex items-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-800 px-3 py-1.5 rounded-full text-sm font-medium transition-colors border border-slate-200"
     >
       <span className={i18n.language === 'en' ? 'text-primary-700 font-bold' : 'text-slate-500'}>EN</span>

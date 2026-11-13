@@ -1,8 +1,9 @@
 import { useParams, Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
+import Seo from '../components/Seo';
+import { shopPhotoAltKey } from '../site';
 import { FaWhatsapp, FaArrowLeft, FaCheckCircle } from 'react-icons/fa';
-import { productsList } from './Products';
+import { productsList } from '../data/products';
 
 export default function ProductDetail() {
   const { id } = useParams();
@@ -11,19 +12,27 @@ export default function ProductDetail() {
   const product = productsList.find(p => p.id === id);
 
   if (!product) {
-    return <div className="pt-32 text-center text-2xl font-bold">{t('detail.not_found')}</div>;
+    return (
+      <div className="pt-32 text-center text-2xl font-bold">
+        <Seo title={t('seo.not_found_title')} description={t('seo.description')} path="/products" noindex />
+        {t('detail.not_found')}
+      </div>
+    );
   }
 
   const name = t(`products.items.${product.id}.name`);
   const description = t(`products.items.${product.id}.description`);
   const benefits = t('detail.benefits', { returnObjects: true });
+  const photoKey = shopPhotoAltKey(product.image);
+  const imageAlt = photoKey ? t(`gallery.alts.${photoKey}`) : name;
 
   return (
     <div className="pt-24 pb-20 min-h-screen bg-slate-50">
-      <Helmet>
-        <title>{t('seo.product_detail_title', { product: name })}</title>
-        <meta name="description" content={description} />
-      </Helmet>
+      <Seo
+        title={t('seo.product_detail_title', { product: name })}
+        description={t('seo.product_detail_description', { product: name, description })}
+        path={`/products/${product.id}`}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -36,7 +45,12 @@ export default function ProductDetail() {
 
             {/* Product Image */}
             <div className="relative h-96 lg:h-auto">
-              <img src={product.image} alt={name} className="w-full h-full object-cover" />
+              <img
+                src={product.image}
+                alt={imageAlt}
+                decoding="async"
+                className="w-full h-full object-cover"
+              />
               <div className="absolute top-6 left-6 bg-white px-4 py-2 rounded-full text-sm font-bold text-primary-700 shadow-lg">
                 {t(`products.items.${product.id}.category`)}
               </div>

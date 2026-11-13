@@ -20,8 +20,7 @@ const useCounter = (end, duration = 2) => {
 
 export default function Hero() {
   const { t } = useTranslation();
-  const yearsTrust = useCounter(25);
-  const happyFarmers = useCounter(10);
+  const yearsTrust = useCounter(20);
   const productsAvailable = useCounter(500);
 
   return (
@@ -32,7 +31,7 @@ export default function Hero() {
       {/* Background image overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="./images/img3.webp"
+          src="/images/img3.webp"
           alt=""
           className="w-full h-full object-cover opacity-20"
         />
@@ -95,7 +94,7 @@ export default function Hero() {
               {[
                 { value: `${yearsTrust}+`, label: t('hero.stats_years') },
                 { value: `${productsAvailable}+`, label: t('hero.stats_products') },
-                { value: `${happyFarmers}k+`, label: t('hero.stats_farmers') },
+                { value: t('hero.trust_value'), label: t('hero.stats_farmers') },
               ].map((stat, i) => (
                 <div key={i} className="text-center">
                   <div className="text-3xl md:text-4xl font-heading font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">{stat.value}</div>
@@ -115,8 +114,11 @@ export default function Hero() {
             {/* Main image */}
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-white/10">
               <img
-                src="./images/img1.webp"
-                alt={t('gallery.alts.0')}
+                src="/images/img1.webp"
+                alt={t('gallery.alts.shop_front')}
+                width={765}
+                height={1020}
+                decoding="async"
                 className="w-full h-[480px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />

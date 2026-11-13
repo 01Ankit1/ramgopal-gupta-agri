@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom';
 // Structural data only — titles, categories and excerpts live in the
 // locale files under education.articles (matched by index)
 const articleMeta = [
-  { id: 1, image: "./images/img1.webp" },
-  { id: 2, image: "./images/img2.webp" },
-  { id: 3, image: "./images/img3.webp" }
+  { id: 1, image: "/images/img1.webp" },
+  { id: 2, image: "/images/img2.webp" },
+  { id: 3, image: "/images/img3.webp" }
 ];
 
 export default function Education() {
@@ -23,7 +23,7 @@ export default function Education() {
       <div className="relative bg-slate-900 text-white py-24 overflow-hidden rounded-b-[3rem] shadow-xl mb-12">
         <div className="absolute inset-0">
           <img 
-            src="./images/img4.webp" 
+            src="/images/img4.webp" 
             alt=""
             className="w-full h-full object-cover opacity-40 mix-blend-overlay"
           />
@@ -72,7 +72,7 @@ export default function Education() {
               className="bg-white rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 border border-slate-100 flex flex-col group cursor-pointer"
             >
               <div className="relative h-56 overflow-hidden">
-                <img src={article.image} alt={article.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <img src={article.image} alt={article.title} loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute top-4 left-4">
                   <span className="text-xs font-bold uppercase tracking-wider text-white bg-primary-600/90 backdrop-blur-md px-3 py-1.5 rounded-full shadow-lg">

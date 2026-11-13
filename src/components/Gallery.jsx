@@ -1,42 +1,32 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
+/**
+ * Real shop photos live in src/assets/gallery/.
+ * Drop jpg, jpeg, png or webp files in that folder — they appear here
+ * automatically, sorted by filename. See src/assets/gallery/README.md.
+ * Stock photos are not used. Until a file is added, it is not shown.
+ */
+const photoModules = import.meta.glob('../assets/gallery/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}', {
+  eager: true,
+  import: 'default',
+});
+
+const ALT_KEY_BY_FILE = {
+  '01-shop-front.webp': 'shop_front',
+  '02-shop-interior.webp': 'shop_interior',
+  '03-shop-night.webp': 'shop_night',
+};
+
+const photos = Object.entries(photoModules)
+  .map(([path, src]) => {
+    const filename = path.split('/').pop();
+    return { filename, src };
+  })
+  .sort((a, b) => a.filename.localeCompare(b.filename, undefined, { numeric: true }));
+
 export default function Gallery() {
   const { t } = useTranslation();
-  const alts = t('gallery.alts', { returnObjects: true });
-
-  const images = [
-    // Shop photos (from local)
-    {
-      src: "./images/img1.webp",
-      colSpan: "col-span-1 md:col-span-2", rowSpan: "row-span-2"
-    },
-    {
-      src: "./images/img2.webp",
-      colSpan: "col-span-1", rowSpan: "row-span-1"
-    },
-    // Product photos (Unsplash)
-    {
-      src: "https://images.unsplash.com/photo-1592982537447-6f29cb9b0999?auto=format&fit=crop&w=800&q=80",
-      colSpan: "col-span-1", rowSpan: "row-span-1"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=800&q=80",
-      colSpan: "col-span-1 md:col-span-2", rowSpan: "row-span-1"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1586771107445-d3ca888129ff?auto=format&fit=crop&w=800&q=80",
-      colSpan: "col-span-1", rowSpan: "row-span-1"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=800&q=80",
-      colSpan: "col-span-1", rowSpan: "row-span-1"
-    },
-    {
-      src: "./images/img3.webp",
-      colSpan: "col-span-1 md:col-span-2", rowSpan: "row-span-1"
-    },
-  ];
 
   return (
     <section id="gallery" className="py-24 bg-slate-50">
@@ -58,29 +48,41 @@ export default function Gallery() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 auto-rows-[220px] gap-4">
-          {images.map((img, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.07 }}
-              className={`${img.colSpan} ${img.rowSpan} rounded-3xl overflow-hidden group relative shadow-md`}
-            >
-              <img
-                src={img.src}
-                alt={alts[index]}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                <span className="text-white font-semibold text-base p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  {alts[index]}
-                </span>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+        {photos.length === 0 ? (
+          <p className="text-center text-slate-500 max-w-xl mx-auto">{t('gallery.empty')}</p>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {photos.map((photo, index) => {
+              const altKey = ALT_KEY_BY_FILE[photo.filename];
+              const alt = altKey
+                ? t(`gallery.alts.${altKey}`)
+                : photo.filename.replace(/\.[^.]+$/, '').replace(/[-_]+/g, ' ');
+              return (
+                <motion.figure
+                  key={photo.filename}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.07 }}
+                  className="rounded-3xl overflow-hidden bg-white shadow-md"
+                >
+                  <img
+                    src={photo.src}
+                    alt={alt}
+                    loading="lazy"
+                    decoding="async"
+                    width={800}
+                    height={600}
+                    className="w-full aspect-[4/3] object-cover"
+                  />
+                  <figcaption className="px-4 py-3 text-sm font-medium text-slate-700">
+                    {alt}
+                  </figcaption>
+                </motion.figure>
+              );
+            })}
+          </div>
+        )}
       </div>
     </section>
   );

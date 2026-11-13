@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { MAPS_URL } from '../site';
 
 // Structural/visual data per testimonial; text comes from the locale files
 const testimonialMeta = [
@@ -86,19 +87,25 @@ export default function Testimonials() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-16 bg-gradient-to-r from-primary-600 to-emerald-700 rounded-3xl p-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white"
+          className="mt-16 bg-gradient-to-r from-primary-600 to-emerald-700 rounded-3xl p-8 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center text-white"
         >
-          {[
-            { num: "10,000+", label: t('testimonials.stats_farmers') },
-            { num: "20+", label: t('testimonials.stats_years') },
-            { num: "500+", label: t('testimonials.stats_products') },
-            { num: "4.9★", label: t('testimonials.stats_rating') },
-          ].map((s, i) => (
-            <div key={i}>
-              <div className="text-3xl font-extrabold mb-1">{s.num}</div>
-              <div className="text-primary-200 text-sm font-medium">{s.label}</div>
-            </div>
-          ))}
+          <div>
+            <div className="text-3xl font-extrabold mb-1">20+</div>
+            <div className="text-primary-200 text-sm font-medium">{t('testimonials.stats_years')}</div>
+          </div>
+          <div>
+            <div className="text-xl md:text-2xl font-extrabold mb-1 leading-snug">{t('testimonials.trust_phrase')}</div>
+          </div>
+          <div>
+            <a
+              href={MAPS_URL}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="inline-flex items-center justify-center text-lg font-extrabold underline decoration-white/40 underline-offset-4 hover:decoration-white"
+            >
+              {t('testimonials.google_reviews')}
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>

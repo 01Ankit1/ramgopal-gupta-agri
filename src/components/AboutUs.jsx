@@ -51,13 +51,21 @@ export default function AboutUs() {
             {/* Image grid */}
             <div className="grid grid-cols-2 gap-4">
               <img
-                src="./images/img1.webp"
-                alt={t('gallery.alts.0')}
+                src="/images/img1.webp"
+                alt={t('gallery.alts.shop_front')}
+                width={765}
+                height={1020}
+                loading="lazy"
+                decoding="async"
                 className="rounded-3xl w-full h-72 object-cover shadow-xl"
               />
               <img
-                src="./images/img2.webp"
-                alt={t('gallery.alts.6')}
+                src="/images/img2.webp"
+                alt={t('gallery.alts.shop_interior')}
+                width={1000}
+                height={450}
+                loading="lazy"
+                decoding="async"
                 className="rounded-3xl w-full h-72 object-cover mt-10 shadow-xl"
               />
             </div>
