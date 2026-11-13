@@ -17,6 +17,7 @@ function App() {
       <ScrollToTop />
       <Navbar />
       <Routes>
+        {/* Indexable routes are also listed in src/seo/publicRoutes.js for prerender. */}
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
         <Route path="/products/:id" element={<ProductDetail />} />

@@ -1,27 +1,17 @@
-import { copyFileSync } from 'node:fs'
-import { resolve } from 'node:path'
-import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-const root = fileURLToPath(new URL('.', import.meta.url))
-
-// GitHub Pages has no rewrite rules. Serving the built app as 404.html
-// lets /products and other routes load the SPA on a direct visit or refresh.
-function githubPagesSpaFallback() {
-  return {
-    name: 'github-pages-spa-fallback',
-    apply: 'build',
-    closeBundle() {
-      const dist = resolve(root, 'dist')
-      copyFileSync(resolve(dist, 'index.html'), resolve(dist, '404.html'))
-    },
-  }
-}
-
+// `npm run build` prerenders every public route to its own HTML file and
+// writes dist/404.html for unknown paths. GitHub Pages has no rewrite rules,
+// so a real file is what makes /products and /products/<slug> return HTTP 200.
 export default defineConfig({
-  plugins: [react(), githubPagesSpaFallback()],
+  plugins: [react()],
   // Custom domain is served from the site root. Absolute asset URLs keep
   // working when a deep link such as /products is refreshed.
   base: '/',
+  ssr: {
+    // The prerender step runs the SSR bundle in Node. Bundle the CJS
+    // dependencies so that bundle does not depend on named-export interop.
+    noExternal: ['react-helmet-async', 'i18next', 'react-i18next'],
+  },
 })

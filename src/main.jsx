@@ -6,6 +6,10 @@ import './index.css';
 import App from './App.jsx';
 import './i18n';
 
+// The prerendered document already has this URL's tags. Remove them before
+// React publishes the tags for the live URL (hash redirects, /admin, 404s).
+document.head.querySelectorAll('[data-prerender]').forEach((node) => node.remove());
+
 // Old HashRouter links (/#/products) still open the same page.
 if (window.location.hash.startsWith('#/')) {
   const next = window.location.hash.slice(1) || '/';
