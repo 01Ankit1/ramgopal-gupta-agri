@@ -1,10 +1,12 @@
 {
   "seo": {
     "title": "M/S Ramgopal Gupta — Khad, Beej & Dawai | Wholesale & Retail | Mangawan, Rewa",
-    "description": "Trusted agri-inputs shop at Bus Stand Mangawan, Rewa (MP) 486111. Fertilizers like Urea, DAP & NPK, certified seeds and crop protection at wholesale & retail rates. GST billing with batch numbers, season credit for regular dealers, 24-hour loading and truck/trolley transport.",
-    "products_title": "Products — M/S Ramgopal Gupta, Mangawan",
-    "products_description": "Fertilizers, seeds, pesticides and weedicides at wholesale & retail rates in Mangawan, Rewa. GST billing with batch numbers, bulk supply and transport arrangement.",
-    "product_detail_title": "{{product}} — M/S Ramgopal Gupta"
+    "description": "M/s Ram Gopal Gupta, Mangawan, Rewa (MP) 486111 — fertiliser, seeds, khad, beej, herbicide, insecticide, fungicide and zinc sulphate. Wholesale and retail on Gurh Rd, near the bus stand. Open daily 7 AM–9 PM.",
+    "products_title": "Products — fertiliser, seeds, khad, beej | Mangawan, Rewa",
+    "products_description": "Fertiliser, seeds, pesticides and weedicides at wholesale and retail rates in Mangawan, Rewa. Khad, beej and crop protection with GST billing.",
+    "product_detail_title": "{{product}} — M/s Ram Gopal Gupta, Mangawan",
+    "product_detail_description": "{{product}}: {{description}} Mangawan, Rewa — khad, beej, fertiliser, seeds | M/s Ram Gopal Gupta.",
+    "not_found_title": "Page not found — M/s Ram Gopal Gupta"
   },
   "nav": {
     "home": "Home",
@@ -16,6 +18,9 @@
     "admin": "Admin",
     "enquiry": "Enquiry",
     "call": "Call",
+    "language": "Change language",
+    "menu_open": "Open menu",
+    "menu_close": "Close menu",
     "topbar": "🌾 Trusted Agriculture Store — Mangawan, Rewa, MP"
   },
   "hero": {
@@ -27,9 +32,10 @@
     "whatsapp_btn": "WhatsApp Enquiry",
     "stats_years": "Years Experience",
     "stats_products": "Products Available",
-    "stats_farmers": "Happy Farmers",
-    "location_name": "M/S Ramgopal Gupta",
-    "location_address": "Bus Stand Mangawan, Rewa, MP",
+    "stats_farmers": "of local farmers",
+    "trust_value": "Trust",
+    "location_name": "M/s Ram Gopal Gupta",
+    "location_address": "Gurh Rd, near bus stand, Mangawan, Rewa",
     "price_badge_label": "Best Price",
     "price_badge_value": "Wholesale Rates",
     "genuine_badge_label": "100% Genuine",
@@ -38,7 +44,7 @@
   "about": {
     "badge": "About Our Shop",
     "title": "Quality Agri-Supplies for Farmers, Retailers & Wholesalers",
-    "desc": "Located at Bus Stand Mangawan, Rewa, M/S Ramgopal Gupta has been the backbone of local farming for over two decades. Farmers get honest advice and genuine inputs; retailers and dealers get true wholesale rates, GST billing with batch numbers, and dependable bulk supply — all under one roof.",
+    "desc": "On Gurh Road at Radha Van — opposite Gurh Mod, near the bus stand — M/s Ram Gopal Gupta has been part of farming around Mangawan, Rewa for 20+ years. Farmers get honest advice and genuine inputs; retailers and dealers get wholesale rates, GST billing with batch numbers, and dependable bulk supply, all under one roof.",
     "years_badge": "Years",
     "trust_title": "Years of Trust",
     "trust_sub": "Serving Farmers & Dealers",
@@ -78,9 +84,10 @@
     "r3_title": "Farmer & Dealer Support",
     "r3_desc": "Always a call away — for crop advice or a bulk order, day or night.",
     "r3_stat_label": "Support",
-    "r4_title": "Trusted by Thousands",
-    "r4_desc": "Farmers and shopkeepers across Mangawan and Rewa buy from us with closed eyes.",
-    "r4_stat_label": "Farmers",
+    "r4_title": "Trusted locally",
+    "r4_desc": "Farmers and shopkeepers across Mangawan and Rewa buy from us with confidence.",
+    "r4_stat": "Trust",
+    "r4_stat_label": "of local farmers",
     "r5_title": "Credit, Loading & Transport",
     "r5_desc": "Season credit for regular dealers, GST billing, 24-hour loading and truck/trolley transport arrangement.",
     "r5_stat_label": "Years",
@@ -100,7 +107,9 @@
   "testimonials": {
     "badge": "Farmer Reviews",
     "title": "What Our Farmers Say",
-    "desc": "Trusted by thousands of farmers across Mangawan & Rewa.",
+    "desc": "Farmers around Mangawan and Rewa. Read the reviews on Google.",
+    "trust_phrase": "Trusted by local farmers",
+    "google_reviews": "Read our Google reviews",
     "verified": "✓ Verified",
     "items": [
       {
@@ -127,16 +136,13 @@
   "gallery": {
     "badge": "Gallery",
     "title": "A Glimpse of Our Store",
-    "desc": "See our store, godown stock and the quality products we supply to farmers and shopkeepers every day.",
-    "alts": [
-      "Our Store",
-      "Store Front",
-      "Fertilizer Bags (Khad)",
-      "Wheat Seeds (Beej)",
-      "Pesticide Spray (Dawai)",
-      "Healthy Crop Field",
-      "Products Stock"
-    ]
+    "desc": "These photographs are of our shop. Godown, loading and more stock photos will appear here as soon as they are added.",
+    "empty": "Real shop photos will be added here. Stock pictures are not shown as if they were the shop.",
+    "alts": {
+      "shop_front": "M/s Ram Gopal Gupta shop front on Gurh Road, Mangawan, with seed bags outside",
+      "shop_interior": "Inside the Mangawan shop: insecticide, fertiliser and crop-protection stock",
+      "shop_night": "M/s Ram Gopal Gupta at night, near the bus stand, Mangawan"
+    }
   },
   "contact": {
     "call_now": "Call Now",
@@ -148,7 +154,10 @@
     "quick_links": "Quick Links",
     "contact_us": "Contact Us",
     "locate_us": "Locate Us",
-    "address": "Bus Stand Mangawan, Rewa, Madhya Pradesh, India - 486111",
+    "address": "Radha Van, opposite Gurh Mod, near bus stand, Gurh Rd, Mangawan, Rewa, Madhya Pradesh - 486111",
+    "hours": "Open daily, 7:00 AM to 9:00 PM",
+    "instagram": "Instagram",
+    "map_title": "M/s Ram Gopal Gupta, Gurh Rd, Mangawan — map",
     "rights": "© {{year}} M/S Ramgopal Gupta. All rights reserved.",
     "tagline": "Kisano ka bharosa, hamari pehchaan.",
     "whatsapp_tooltip": "Chat with us!"

@@ -35,7 +35,7 @@ export default function WhyChooseUs() {
       bg: "from-rose-500 to-pink-600",
       title: t('whyus.r4_title'),
       desc: t('whyus.r4_desc'),
-      stat: "10k+",
+      stat: t('whyus.r4_stat'),
       statLabel: t('whyus.r4_stat_label')
     },
     {
@@ -61,8 +61,10 @@ export default function WhyChooseUs() {
       {/* Background image */}
       <div className="absolute inset-0">
         <img
-          src="./images/img4.webp"
+          src="/images/img4.webp"
           alt=""
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover opacity-10"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-primary-950/90 to-slate-900" />

@@ -65,10 +65,12 @@ export default function Navbar() {
 
           <Link to="/" className="flex items-center gap-2" onClick={() => window.scrollTo(0, 0)}>
             <img
-              src="./logo.png"
-              alt="M/S Ramgopal Gupta"
+              src="/logo.png"
+              alt="M/s Ram Gopal Gupta"
+              width={512}
+              height={405}
+              decoding="async"
               className="h-12 md:h-14 w-auto object-contain"
-              onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/200x80/00A651/FFF?text=RG+Agri&font=montserrat"; }}
             />
           </Link>
 
@@ -120,7 +122,10 @@ export default function Navbar() {
           <div className="lg:hidden flex items-center gap-3">
             <LanguageSwitcher />
             <button
+              type="button"
               onClick={() => setIsOpen(!isOpen)}
+              aria-expanded={isOpen}
+              aria-label={isOpen ? t('nav.menu_close') : t('nav.menu_open')}
               className="w-9 h-9 rounded-lg bg-slate-100 flex items-center justify-center text-slate-700 hover:bg-primary-50 hover:text-primary-600 transition-colors"
             >
               {isOpen ? <X size={22} /> : <Menu size={22} />}

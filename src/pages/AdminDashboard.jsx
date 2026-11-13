@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
+import Seo from '../components/Seo';
 import { useTranslation } from 'react-i18next';
 import { LayoutDashboard, Package, BookOpen, MessageSquare, Settings, Users } from 'lucide-react';
 
@@ -21,10 +21,7 @@ export default function AdminDashboard() {
 
   return (
     <div className="pt-20 min-h-screen bg-slate-100 flex flex-col md:flex-row">
-      <Helmet>
-        <title>{t('admin.page_title')}</title>
-        <meta name="robots" content="noindex, nofollow" />
-      </Helmet>
+      <Seo title={t('admin.page_title')} description={t('admin.mock_desc')} path="/admin" noindex />
       
       {/* Sidebar */}
       <div className="w-full md:w-64 bg-slate-900 text-white flex-shrink-0 md:min-h-screen z-10 border-r border-slate-800">

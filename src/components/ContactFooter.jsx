@@ -1,6 +1,7 @@
-import { FaMapMarkerAlt, FaPhoneAlt, FaWhatsapp, FaEnvelope, FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaPhoneAlt, FaWhatsapp, FaEnvelope, FaInstagram } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import { INSTAGRAM_URL, MAPS_EMBED_URL, MAPS_URL, WHATSAPP_URL } from '../site';
 
 export default function ContactFooter() {
   const { t } = useTranslation();
@@ -35,21 +36,39 @@ export default function ContactFooter() {
           <div className="lg:col-span-4">
             <div className="mb-5">
               <img
-                src="./logo.png"
-                alt="M/S Ramgopal Gupta Logo"
+                src="/logo.png"
+                alt="M/s Ram Gopal Gupta"
+                width={512}
+                height={405}
+                loading="lazy"
+                decoding="async"
                 className="h-20 w-auto object-contain bg-white p-2 rounded-2xl"
-                onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/200x80/15803d/FFF?text=RG+Agri&font=montserrat"; }}
               />
             </div>
             <p className="text-slate-400 mb-6 leading-relaxed text-sm">
               {t('contact.brand_desc')}
             </p>
-            <div className="flex space-x-3">
-              {[FaFacebook, FaInstagram, FaWhatsapp, FaYoutube].map((Icon, i) => (
-                <a key={i} href="#" className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary-600 hover:text-white transition-all">
-                  <Icon size={17} />
-                </a>
-              ))}
+            <div className="flex flex-wrap items-center gap-3">
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noreferrer noopener"
+                aria-label={t('contact.instagram')}
+                className="inline-flex items-center gap-2 rounded-xl bg-slate-800 px-3 py-2 text-sm font-semibold text-slate-200 hover:bg-primary-600 hover:text-white transition-all"
+              >
+                <FaInstagram size={17} aria-hidden="true" />
+                {t('contact.instagram')}
+              </a>
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noreferrer noopener"
+                aria-label="WhatsApp"
+                className="inline-flex items-center gap-2 rounded-xl bg-slate-800 px-3 py-2 text-sm font-semibold text-slate-200 hover:bg-green-600 hover:text-white transition-all"
+              >
+                <FaWhatsapp size={17} aria-hidden="true" />
+                WhatsApp
+              </a>
             </div>
           </div>
 
@@ -60,22 +79,15 @@ export default function ContactFooter() {
               {[
                 { label: t('nav.home'), to: "/" },
                 { label: t('nav.products'), to: "/products" },
-                { label: t('nav.about'), hash: "#about" },
-                { label: t('nav.gallery'), hash: "#gallery" },
-                { label: t('nav.contact'), hash: "#contact" },
+                { label: t('nav.about'), to: "/#about" },
+                { label: t('nav.gallery'), to: "/#gallery" },
+                { label: t('nav.contact'), to: "/#contact" },
               ].map((link, i) => (
                 <li key={i}>
-                  {link.to ? (
-                    <Link to={link.to} className="hover:text-primary-400 transition-colors flex items-center gap-2 group">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary-600 opacity-0 group-hover:opacity-100 transition-opacity" />
-                      {link.label}
-                    </Link>
-                  ) : (
-                    <a href={link.hash} className="hover:text-primary-400 transition-colors flex items-center gap-2 group">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary-600 opacity-0 group-hover:opacity-100 transition-opacity" />
-                      {link.label}
-                    </a>
-                  )}
+                  <Link to={link.to} className="hover:text-primary-400 transition-colors flex items-center gap-2 group">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -87,8 +99,11 @@ export default function ContactFooter() {
             <ul className="space-y-4 text-sm">
               <li className="flex gap-3">
                 <FaMapMarkerAlt className="text-primary-400 mt-1 flex-shrink-0 text-base" />
-                <span className="text-slate-400">{t('contact.address')}</span>
+                <a href={MAPS_URL} target="_blank" rel="noreferrer noopener" className="text-slate-400 hover:text-primary-400 transition-colors">
+                  {t('contact.address')}
+                </a>
               </li>
+              <li className="text-slate-400">{t('contact.hours')}</li>
               <li className="flex gap-3 items-start">
                 <FaPhoneAlt className="text-primary-400 flex-shrink-0 mt-1 text-base" />
                 <div className="text-slate-400 space-y-1">
@@ -117,7 +132,8 @@ export default function ContactFooter() {
             <h4 className="text-white font-heading font-bold mb-5 text-base uppercase tracking-wide">{t('contact.locate_us')}</h4>
             <div className="h-44 rounded-2xl overflow-hidden ring-2 ring-slate-700">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14457.653457198124!2d81.5644837!3d24.6738986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39845ab55b721869%3A0xe781afbd6e7ff2b3!2sMangawan%2C%20Madhya%20Pradesh%20486111!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin"
+                title={t('contact.map_title')}
+                src={MAPS_EMBED_URL}
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -126,6 +142,14 @@ export default function ContactFooter() {
                 referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
+            <a
+              href={MAPS_URL}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="inline-block mt-3 text-sm font-semibold text-primary-400 hover:text-primary-300"
+            >
+              {t('contact.directions')}
+            </a>
           </div>
         </div>
 

@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Leaf, Droplets, Shield, Zap } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import { shopPhotoAltKey } from '../site';
 
 const categoryIcons = [Leaf, Droplets, Shield, Zap];
 const categoryColors = [
@@ -19,25 +20,25 @@ export default function ProductCategories() {
       id: 1,
       title: t('categories.c1_title'),
       description: t('categories.c1_desc'),
-      image: "./images/fertilizer.jpg",
+      image: "/images/fertilizer.jpg",
     },
     {
       id: 2,
       title: t('categories.c2_title'),
       description: t('categories.c2_desc'),
-      image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=800&q=80",
+      image: "/images/img1.webp",
     },
     {
       id: 3,
       title: t('categories.c3_title'),
       description: t('categories.c3_desc'),
-      image: "https://images.unsplash.com/photo-1586771107445-d3ca888129ff?auto=format&fit=crop&w=800&q=80",
+      image: "/images/img2.webp",
     },
     {
       id: 4,
       title: t('categories.c4_title'),
       description: t('categories.c4_desc'),
-      image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=800&q=80",
+      image: "/images/img2.webp",
     }
   ];
 
@@ -67,6 +68,8 @@ export default function ProductCategories() {
           {categories.map((category, index) => {
             const Icon = categoryIcons[index];
             const colors = categoryColors[index];
+            const photoKey = shopPhotoAltKey(category.image);
+            const imageAlt = photoKey ? t(`gallery.alts.${photoKey}`) : category.title;
             return (
               <motion.div
                 key={category.id}
@@ -80,7 +83,9 @@ export default function ProductCategories() {
                 <div className="relative h-52 overflow-hidden">
                   <img
                     src={category.image}
-                    alt={category.title}
+                    alt={imageAlt}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className={`absolute inset-0 bg-gradient-to-t ${colors.bg} opacity-40 group-hover:opacity-60 transition-opacity duration-300`} />
